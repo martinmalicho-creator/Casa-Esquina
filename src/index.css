@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-primary: #e02128;
+    --brand-primary-dark: #b80016;
+    --brand-paper: #fdfbf7;
+    --brand-surface: #fbf9f5;
+    --brand-surface-subtle: #f9f6f0;
+    --brand-blue: #2a70b8;
+    --brand-yellow: #f3b329;
+    --brand-ink: #1b1c1a;
+  }
+
+  body {
+    background-color: var(--brand-paper);
+    color: var(--brand-ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+  }
+}
+
+/* Hard Drop Shadows & Neo-Brutalist Print Depth */
+.shadow-hard {
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.shadow-hard-sm {
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.shadow-hard-lg {
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.shadow-hard-red {
+  box-shadow: 4px 4px 0px #e02128;
+}
+
+.shadow-hard-yellow {
+  box-shadow: 4px 4px 0px #f3b329;
+}
+
+.shadow-hard-blue {
+  box-shadow: 4px 4px 0px #2a70b8;
+}
+
+/* Tactile button click feel */
+.btn-tactile {
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 120ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-tactile:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px #000000;
+}
+
+.btn-tactile:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000000;
+}
+
+.btn-tactile-sm {
+  transition: transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-tactile-sm:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #000000;
+}
+
+.btn-tactile-sm:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000000;
+}
+
+/* Diagonal stripe tape background */
+.pattern-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.03) 10px,
+    rgba(0, 0, 0, 0.03) 20px
+  );
+}
+
+/* Font helpers */
+.font-display {
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-label {
+  font-family: 'Space Grotesk', monospace;
+}
+
+/* Reglas de Impresión y Exportación a PDF */
+@media print {
+  /* Ocultar elementos de navegación e interactivos */
+  header, footer, nav, .btn-tactile, .btn-tactile-sm, .no-print {
+    display: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+  }
+
+  /* Formato limpio y legible para impresión */
+  .shadow-hard, .shadow-hard-sm, .shadow-hard-lg {
+    box-shadow: none !important;
+    border: 1px solid #1b1c1a !important;
+  }
+
+  .print-page-break {
+    page-break-before: always;
+  }
+}

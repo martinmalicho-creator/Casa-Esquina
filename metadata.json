@@ -1,0 +1,8 @@
+{
+  "name": "Casas Esquina Libertad",
+  "description": "Consumos problemáticos y salud mental popular. Prevenir también es cuidar. Dispositivo comunitario en Párroco Marshke Nº 1588, Barrio San Pedrito.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
